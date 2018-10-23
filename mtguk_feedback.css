@@ -1,0 +1,126 @@
+body {
+	font-family:arial;
+	font-size:0.9em;
+	background-color:#DEDEDE;
+}
+
+h1 {
+	text-align:center;
+}
+
+h4 {
+	font-size:1.5em;
+	margin-bottom: 0;
+	padding-bottom: 4px;
+	margin-top: 0;
+	padding-top: 0;
+	text-align:center;
+}
+
+#users_table {
+		margin-bottom: 0px;
+}
+
+#user_table {
+	margin-bottom: 0px;
+}
+
+#user_table tr {
+		margin: 50px;
+}
+
+#user_table tr:hover * {
+		background-color: #e1e1e1;
+		cursor: pointer;
+}
+
+#user_table td {
+    vertical-align: middle;
+}
+
+#trades_table td {
+	border-top: none;
+}
+
+#trades_table tr:hover {
+	background-color: #ffff;
+}
+
+#td_name {
+	width:80%
+}
+
+#user_table_inner {
+	padding: 0px;
+}
+
+#score_header {
+	text-align:center;
+}
+
+#score_table {
+	margin-bottom: 0px;
+}
+
+#score_table tr td {
+		padding: 0px;
+		padding-left: 2px;
+    vertical-align: middle;
+		border: none;
+		text-align: left;
+}
+
+#score_buy {
+	color: blue;
+}
+
+#score_sell {
+	color: red;
+}
+
+#score {
+	font-size: 35px;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 2px;
+}
+
+div.input-group {
+	width: 100%;
+}
+
+div#page {
+	margin:20px auto 0 auto;
+	padding-left: 30px;
+	padding-right: 30px;
+	width:60%;
+	height:2000px;
+	min-height:1000px;
+	background-color:#ffffff;
+	border-radius:5px 5px 0 0;
+	border:solid 1px #A3A3A3;
+}
+
+div#fbtabs {
+	box-sizing: border-box;
+	width: 440px;
+	height: 468px;
+	padding: 12px 18px 0;
+	margin:20px auto 0 auto;
+	background-color:#F1F1F1;
+	border-radius:5px 5px 0 0;
+	border:solid 1px #A3A3A3;
+}
+
+button.fbbutton {
+	font-size:1.2em;
+	cursor: pointer;
+	width:198px;
+	height:40px;
+	color:#ffffff;
+	background-color:#1A4C66;
+}
+
+button.fbbutton:hover{
+	background-color:#3399cc;
+}
