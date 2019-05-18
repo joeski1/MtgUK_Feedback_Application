@@ -23,44 +23,39 @@ $fbid = '';
 if(isset($_POST["query"])) {
   $fbid = $_POST["query"];
 }
-  $stmt = $pdo->prepare("SELECT * FROM trades WHERE seller_id = ? OR buyer_id = ?");
-  $stmt->execute(array($fbid, $fbid));
+  $stmt = $pdo->prepare("SELECT * FROM vouches WHERE vouchee_id = ?;");
+  $stmt->execute([$fbid]);
   if($stmt->rowCount() > 0) {
     $output .= '
             <td colspan="5">
+            <div id="trades_div">
               <table class="table" id="trades_table">
               <tr>
-                <th>Buy or Sell</th>
+                <th>Bought or Sold</th>
                 <th>Who Vouched</th>
                 <th>Date</th>
               </tr>';
     while ($row = $stmt->fetch()) {
 
       // Work out if it was buy or sell
-      $sell = false;
-      if(strcmp($row['seller_id'], $fbid)) {
-        $buyorsell = 'sell';
-        $sell = true;
+      if($row['vouchee_sale']) {
+        $buyorsell = 'Sold';
       } else {
-        $buyorsell = 'buy';
+        $buyorsell = 'Bought';
       }
 
       // Find who vouched
-      if($sell) {
-          $vouchedby = $row['seller_name'];
-      } else {
-          $vouchedby = $row['buyer_name'];
-      }
+      $vouchedby = $row['voucher_name'];
 
       $output .= '
       <tr>
         <td>'.$buyorsell.'</td>
         <td>'.$vouchedby.'</td>
-        <td>'.$row["date"].'</td>
+        <td>'.$newDate = date("d-m-Y", strtotime($row["date"])).'</td>
       </tr>
       ';
     }
-    $output .= '</table> </td>';
+    $output .= '</table></div></td>';
   	echo $output;
   } else {
     echo '<td colspan="5"> No results found </td>';
